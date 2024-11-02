@@ -1,4 +1,4 @@
-function cadastrarAluno() {
+function CadastrarAluno() {
     const nome = document.getElementById('nome').value;
     const curso = document.getElementById('curso').value;
     const anoConclusao = document.getElementById('anoConclusao').value;
@@ -15,7 +15,7 @@ function cadastrarAluno() {
     }
   }
    
-  function mostrarTodosAlunos() {
+  function MostrarTodosAlunos() {
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
@@ -35,7 +35,7 @@ function cadastrarAluno() {
     }
   }
    
-  function mostrarAluno() {
+  function MostrarAluno() {
     const nomeBusca = document.getElementById('buscaNome').value;
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     const resultado = document.getElementById('resultado');
@@ -54,7 +54,7 @@ function cadastrarAluno() {
     }
   }
    
-  function atualizarAluno(index) {
+  function AtualizarAluno(index) {
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     const aluno = alunos[index];
    
