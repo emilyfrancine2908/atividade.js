@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
-    
     <form>
         <legend>CADASTRA-SE: </legend>
 
         <label form="nome">Nome: </label>
-        <input type="text" id="nome" name="nome"><br>
-
+        <input type="text" id="nome" name="nome"><br><br>
+        
         <label form="curso">Curso: </label>
         <select id="curso" name="curso" required>
             <option value="" disabled selected>Selecione um curso</option>
@@ -23,17 +24,21 @@
             <option value="Enfermagem">Enfermagem</option>
             <option value="Informática">Informática</option>
             <option value="Turismo">Turismo</option>
-        </select><br>
+        </select><br><br>
 
         <label form="ano de conclusao">Ano de Conclusão: </label>
-        <input type="number" id="ano" name="ano"><br>
+        <input type="number" id="ano" name="ano"><br><br>
 
-        <input type="button" value="Cadastrar" onclick="CadastrarAluno()">
-        <input type="button" value="Consultar" onclick="MostrarTodosAlunos()">
-        <input type="button" value="Buscar Aluno" onclick="MostrarAluno()">
-        <input type="button" value="Atualizar" onclick="AtualizarAluno(index)">
-        <input type="button" value="Remover" onclick="RemoverAluno(index)">
+        <div class="actions">
+            <input type="button" value="Cadastrar" onclick="CadastrarAluno()">
+            <input type="button" value="Mostrar Todos Alunos" onclick="MostrarTodosAlunos()">
+            <input type="text" id="buscaNome" placeholder="Buscar por Nome">
+            <input type="button" value="Buscar Aluno" onclick="MostrarAluno()">
+        </div>
 
     </form>
+
+    <p id="resultado"></p>
+
 </body>
 </html>

@@ -9,7 +9,7 @@ function CadastrarAluno() {
       alunos.push(aluno);
       localStorage.setItem('alunos', JSON.stringify(alunos));
       alert('Cadastrado efetuado com sucesso!');
-      limparFormulario();
+      LimparFormulario();
     } else {
       alert('Por favor, preencha todos os campos.');
     }
@@ -72,15 +72,15 @@ function CadastrarAluno() {
     }
   }
    
-  function removerAluno(index) {
+  function RemoverAluno(index) {
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     alunos.splice(index, 1);
     localStorage.setItem('alunos', JSON.stringify(alunos));
-    mostrarTodosAlunos();
+    MostrarTodosAlunos();
     alert('Aluno removido com sucesso!');
   }
    
-  function limparFormulario() {
+  function LimparFormulario() {
     document.getElementById('nome').value = '';
     document.getElementById('curso').value = '';
     document.getElementById('anoConclusao').value = '';
