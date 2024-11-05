@@ -1,7 +1,7 @@
 function CadastrarAluno() {
     const nome = document.getElementById('nome').value;
     const curso = document.getElementById('curso').value;
-    const anoConclusao = document.getElementById('anoConclusao').value;
+    const anoConclusao = document.getElementById('ano').value;
    
     if (nome && curso && anoConclusao) {
       const aluno = { nome, curso, anoConclusao };
@@ -28,8 +28,8 @@ function CadastrarAluno() {
           <p><strong>Nome:</strong> ${aluno.nome}</p>
           <p><strong>Curso:</strong> ${aluno.curso}</p>
           <p><strong>Ano de Conclusão:</strong> ${aluno.anoConclusao}</p>
-          <button onclick="atualizarAluno(${index})">Atualizar</button>
-          <button onclick="removerAluno(${index})">Remover</button>
+          <button onclick="AtualizarAluno(${index})">Atualizar</button>
+          <button onclick="RemoverAluno(${index})">Remover</button>
         </div>`;
       });
     }
@@ -40,14 +40,13 @@ function CadastrarAluno() {
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     const resultado = document.getElementById('resultado');
     resultado.innerHTML = '';
-   
     const aluno = alunos.find(aluno => aluno.nome.toLowerCase() === nomeBusca.toLowerCase());
    
     if (aluno) {
-      resultado.innerHTML = `<div class="result-item">
-        <p><strong>Nome:</strong> ${aluno.nome}</p>
-        <p><strong>Curso:</strong> ${aluno.curso}</p>
-        <p><strong>Ano de Conclusão:</strong> ${aluno.anoConclusao}</p>
+      resultado.innerHTML = `<div class='result-item'>
+      <p><strong>Nome:</strong>${aluno.nome}</p>
+      <p><strong>Curso:</strong>${aluno.curso}</p>
+      <p><strong>Ano de Conclusão:</strong>${aluno.anoConclusao}</p>
       </div>`;
     } else {
       resultado.innerHTML = '<p>Aluno não encontrado.</p>';
@@ -73,7 +72,7 @@ function CadastrarAluno() {
   }
    
   function RemoverAluno(index) {
-    const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
+    const alunos = JSON.parse(localStorage.getItem('alunos'));
     alunos.splice(index, 1);
     localStorage.setItem('alunos', JSON.stringify(alunos));
     MostrarTodosAlunos();
